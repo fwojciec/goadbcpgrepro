@@ -55,7 +55,6 @@ func (s *server) DoGet(tkt *flight.Ticket, fs flight.FlightService_DoGetServer) 
 	if err != nil {
 		return err
 	}
-	reader.Retain()
 	defer reader.Release()
 
 	wr := flight.NewRecordWriter(
